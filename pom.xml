@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.keykatyu.sapinet</groupId>
+  <artifactId>sAPInet</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <description>Une librairie java pour obtenir différentes informations vis-à-vis des services de l'hébergeur Sapinet grâce à api.sapinet.fr !</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>commons-io</groupId>
+  		<artifactId>commons-io</artifactId>
+  		<version>2.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.json</groupId>
+  		<artifactId>json</artifactId>
+  		<version>20201115</version>
+  	</dependency>
+  </dependencies>
+</project>
