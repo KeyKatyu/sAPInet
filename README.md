@@ -11,7 +11,7 @@ La librarie est disponible sur JitPack.io, pour la récupérer dans votre projet
 
 Pour utiliser [l'API de Sapinet](https://api.sapinet.fr) vous aurez besoin d'un **token**. Le(s) développeur(s) de sAPInet ne fournissent aucuns tokens, il vous faudra en faire la demande à l'équipe officielle de l'hébergeur.
 
-**Initialisation :**
+### Initialisation
 ```
 Sapinet sapinet = new Sapinet("Votre TOKEN");
 ```
