@@ -26,11 +26,11 @@ List<Service> services = sapinet.pingAllServices();
 ```
 > **Vérifier si un service est en maintenance :**
 ```
-List<Service> services = sapinet.isUnderMaintenance(Service);
+boolean maintenance = sapinet.isUnderMaintenance(Service);
 ```
 > **Récupérer le message de maintenance (si le service l'est) :**
 ```
-List<Service> services = sapinet.getMaintenanceMessage(Service);
+String maintenanceMessage = sapinet.getMaintenanceMessage(Service);
 ```
 
 ### Traitement
