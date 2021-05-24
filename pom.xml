@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.keykatyu.sapinet</groupId>
   <artifactId>sAPInet</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1.5-SNAPSHOT</version>
   <description>Une librairie java pour obtenir différentes informations vis-à-vis des services de l'hébergeur Sapinet grâce à api.sapinet.fr !</description>
   <dependencies>
   	<dependency>

@@ -45,9 +45,43 @@ public class Sapinet
 			JSONObject service = response.getJSONObject(String.valueOf(i));
 			services.add(new Service(service.getInt("id"), service.getString("name"), service.getString("testType"), service.getInt("testPort"), 
 					service.getString("hostname"), service.getBoolean("status")));
-			//
 		}
 		return services;
+	}
+	
+	public boolean isUnderMaintenance(Service service) throws MalformedURLException, IOException
+	{
+		try {
+			JSONObject response = new JSONObject(IOUtils.toString(new URL(
+					"https://api.sapinet.fr/?token=" + accessKey + "&id=" + service.getServiceId() + "&method=getIsMaintenance"), Charset.forName("UTF-8")));
+			if(response.getBoolean("underMaintenance"))
+			{
+				return true;
+			} else {
+				return false;
+			}
+		} catch(JSONException e) {
+			System.err.println("Le service n°" + service.getServiceId() + " n'existe pas chez Sapinet.");
+			return false;
+		}
+	}
+	
+	public String getMaintenanceMessage(Service service) throws MalformedURLException, IOException 
+	{
+		if(!isUnderMaintenance(service)) 
+		{
+			System.err.println("Le service " + service.getName() + " n'est pas en maintenance.");
+			return "Ce service n'est pas en maintenance.";
+		} else {
+			try {
+				JSONObject response = new JSONObject(IOUtils.toString(new URL(
+						"https://api.sapinet.fr/?token=" + accessKey + "&id=" + service.getServiceId() + "&method=getMessageMaintenance"), Charset.forName("UTF-8")));
+				return response.getString("messageMaintenance");
+			} catch(JSONException e) {
+				System.err.println("Le service n°" + service.getServiceId() + " n'existe pas chez Sapinet.");
+				return "Le service n°" + service.getServiceId() + " n'existe pas chez Sapinet.";
+			}
+		}
 	}
 	
 	public String getAccessKey() {
