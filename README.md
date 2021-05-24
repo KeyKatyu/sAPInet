@@ -15,16 +15,26 @@ Pour utiliser [l'API de Sapinet](https://api.sapinet.fr) vous aurez besoin d'un 
 ```
 Sapinet sapinet = new Sapinet("Votre TOKEN");
 ```
-**Récupérer les informations d'un seul service :**
+### Récupération
+> **Récupérer les informations d'un seul service :**
 ```
 Service serviceUn = sapinet.pingService(1);
 ```
-**Récupérer les informations de tous les services :** (nécessite un token administrateur)
+> **Récupérer les informations de tous les services :** (nécessite un token administrateur)
 ```
 List<Service> services = sapinet.pingAllServices();
 ```
+> **Vérifier si un service est en maintenance :**
+```
+List<Service> services = sapinet.isUnderMaintenance(Service);
+```
+> **Récupérer le message de maintenance (si le service l'est) :**
+```
+List<Service> services = sapinet.getMaintenanceMessage(Service);
+```
 
-**Utiliser la classe Service :**
+### Traitement
+> **La classe Service :**
 ```
 Service serviceDeTest = sapinet.pingService(2);
 
