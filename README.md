@@ -15,35 +15,36 @@ Pour utiliser [l'API de Sapinet](https://api.sapinet.fr) vous aurez besoin d'un 
 ```
 Sapinet sapinet = new Sapinet("Votre TOKEN");
 ```
+
 ### Récupération
-> **Récupérer les informations d'un seul service :**
+> **Informations d'un seul service :**
 ```
 Service serviceUn = sapinet.pingService(1);
 ```
-> **Récupérer les informations de tous les services :** (nécessite un token administrateur)
+> **Informations de tous les services :** (nécessite un token administrateur)
 ```
 List<Service> services = sapinet.pingAllServices();
-```
-> **Vérifier si un service est en maintenance :**
-```
-boolean maintenance = sapinet.isUnderMaintenance(Service);
-```
-> **Récupérer le message de maintenance (si le service l'est) :**
-```
-String maintenanceMessage = sapinet.getMaintenanceMessage(Service);
 ```
 
 ### Traitement
 > **La classe Service :**
 ```
-Service serviceDeTest = sapinet.pingService(2);
-
-boolean isOnline = serviceDeTest.isOnline();
-int serviceId = serviceDeTest.getServiceId();
-int testPort = serviceDeTest.getTestPort();
-String hostname = serviceDeTest.getHostname();
-String name = serviceDeTest.getName();
-String testType = serviceDeTest.getTestType();
+Service
+* .isOnline(); -> boolean
+* .getServiceId(); -> Integer
+* .getTestPort(); -> Integer
+* .getHostname(); -> String
+* .getName(); -> String
+* .getTestType(); -> String
+* .isUnderMaintenance(); -> boolean
+* .getMaintenanceMessage(); -> String
+```
+> **L'enum TestType :**
+```
+TestType
+* .IP_PORT
+* .IP
+	* .getTestType(); -> String
 ```
 
 ## API IDs :
