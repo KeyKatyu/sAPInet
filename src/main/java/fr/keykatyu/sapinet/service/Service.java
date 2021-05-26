@@ -33,7 +33,7 @@ public class Service
 	
 	public TestType getTestType() 
 	{
-		return testType;		
+		return testType;
 	}
 	
 	public int getTestPort() {

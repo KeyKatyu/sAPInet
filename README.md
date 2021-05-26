@@ -44,7 +44,7 @@ Service
 TestType
 * .IP_PORT
 * .IP
-	* .getTestType(); -> String
+	- .getTestType(); -> String
 ```
 
 ## API IDs :
