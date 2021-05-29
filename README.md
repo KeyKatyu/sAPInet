@@ -25,7 +25,14 @@ Service serviceUn = sapinet.pingService(1);
 ```
 List<Service> services = sapinet.pingAllServices();
 ```
-
+> **La rate actuelle d'un token :**
+```
+int rate = sapinet.getRate();
+```
+> **La limite actuelle de rate d'un token :**
+```
+int rate = sapinet.getRateLimit();
+```
 ### Traitement
 > **La classe Service :**
 ```
@@ -38,13 +45,6 @@ Service
 * .getTestType(); -> String
 * .isUnderMaintenance(); -> boolean
 * .getMaintenanceMessage(); -> String
-```
-> **L'enum TestType :**
-```
-TestType
-* .IP_PORT
-* .IP
-	- .getTestType(); -> String
 ```
 
 ## API IDs :

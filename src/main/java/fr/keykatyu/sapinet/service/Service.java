@@ -4,14 +4,14 @@ public class Service
 {
 	private int serviceId;
 	private String name;
-	private TestType testType;
+	private String testType;
 	private int testPort;
 	private String hostname;
 	private boolean isOnline;
 	private boolean isUnderMaintenance;
 	private String maintenanceMessage;
 	
-	public Service(int serviceId, String name, TestType testType, int testPort, String hostname, boolean isOnline, boolean isUnderMaintenance, String maintenanceMessage)
+	public Service(int serviceId, String name, String testType, int testPort, String hostname, boolean isOnline, boolean isUnderMaintenance, String maintenanceMessage)
 	{
 		this.serviceId = serviceId;
 		this.name = name;
@@ -31,7 +31,7 @@ public class Service
 		return name;
 	}
 	
-	public TestType getTestType() 
+	public String getTestType() 
 	{
 		return testType;
 	}
