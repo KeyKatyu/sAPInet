@@ -29,7 +29,7 @@ public class Sapinet
 					"https://api.sapinet.fr/?token=" + accessKey + "&id=" + serviceId + "&method=getMonitor"), Charset.forName("UTF-8")));
 			return new Service(response.getInt("id"), response.getString("name"), response.getString("testType"), 
 					response.getInt("testPort"), response.getString("hostname"), response.getBoolean("status"), 
-					response.getBoolean("underMaintenance"), response.getString("messageMaintenance"));
+					response.getBoolean("underMaintenance"), response.getString("messageMaintenance"), response.getBoolean("discordAlertMP"));
 		} catch(JSONException e) {
 			System.err.println("Le service n°" + serviceId + " n'existe pas chez Sapinet ou la clé est incorrecte.");
 			return null;
@@ -47,7 +47,7 @@ public class Sapinet
 				JSONObject service = response.getJSONObject(String.valueOf(i));
 				services.add(new Service(service.getInt("id"), service.getString("name"), service.getString("testType"), 
 						service.getInt("testPort"), service.getString("hostname"), service.getBoolean("status"), 
-						service.getBoolean("underMaintenance"), service.getString("messageMaintenance")));
+						service.getBoolean("underMaintenance"), service.getString("messageMaintenance"), service.getBoolean("discordAlertMP")));
 			}
 			return services;
 		} catch (JSONException e) {

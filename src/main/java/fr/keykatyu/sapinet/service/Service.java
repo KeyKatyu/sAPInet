@@ -10,8 +10,10 @@ public class Service
 	private boolean isOnline;
 	private boolean isUnderMaintenance;
 	private String maintenanceMessage;
+	private boolean isDiscordAlertOn;
 	
-	public Service(int serviceId, String name, String testType, int testPort, String hostname, boolean isOnline, boolean isUnderMaintenance, String maintenanceMessage)
+	public Service(int serviceId, String name, String testType, int testPort, String hostname, boolean isOnline, 
+			boolean isUnderMaintenance, String maintenanceMessage, boolean isDiscordAlertOn)
 	{
 		this.serviceId = serviceId;
 		this.name = name;
@@ -21,6 +23,7 @@ public class Service
 		this.isOnline = isOnline;
 		this.isUnderMaintenance = isUnderMaintenance;
 		this.maintenanceMessage = maintenanceMessage;
+		this.isDiscordAlertOn = isDiscordAlertOn;
 	}
 	
 	public int getServiceId() {
@@ -54,5 +57,9 @@ public class Service
 	
 	public String getMaintenanceMessage() {
 		return maintenanceMessage;
+	}
+	
+	public boolean isDiscordAlertOn() {
+		return isDiscordAlertOn;
 	}
 }
