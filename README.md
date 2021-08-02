@@ -45,6 +45,7 @@ Service
 * .getTestType(); -> String
 * .isUnderMaintenance(); -> boolean
 * .getMaintenanceMessage(); -> String
+* .isDiscordAlertOn(); -> boolean
 ```
 
 ## API IDs :
